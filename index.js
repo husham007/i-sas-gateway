@@ -3,8 +3,9 @@ const { ApolloGateway, RemoteGraphQLDataSource } = require("@apollo/gateway");
 
 const gateway = new ApolloGateway({
   serviceList: [
-    { name: "user", url: "http://localhost:9000/graphql" },
-   // { name: "reviews", url: "http://localhost:4002/graphql" },
+    { name: "user", url: "http://localhost:5000/graphql" },
+    { name: "questionBank", url: "http://localhost:7000/graphql" },
+    { name: "exam", url: "http://localhost:7008/graphql" },
     
   ],
 
@@ -20,7 +21,7 @@ const gateway = new ApolloGateway({
   },
 });
 
-(async () => {
+(async () => {  
   const { schema, executor } = await gateway.load();
 
   const server = new ApolloServer({ schema, executor, 
