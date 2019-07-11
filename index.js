@@ -5,7 +5,7 @@ const gateway = new ApolloGateway({
   serviceList: [
     { name: "user", url: "http://localhost:5000/graphql" },
     { name: "questionBank", url: "http://localhost:7000/graphql" },
-    { name: "exam", url: "http://localhost:7008/graphql" },
+    { name: "exam", url: "http://localhost:7009/graphql" },
     
   ],
 
