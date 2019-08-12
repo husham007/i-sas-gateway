@@ -1,5 +1,13 @@
-const { ApolloServer } = require("apollo-server");
+
+
+
+const express = require('express');
+import { ApolloServer } from 'apollo-server-express';
 const { ApolloGateway, RemoteGraphQLDataSource } = require("@apollo/gateway");
+
+const port = process.env.PORT || 8000;
+
+const app = express();
 
 const gateway = new ApolloGateway({
   serviceList: [
@@ -41,9 +49,20 @@ const gateway = new ApolloGateway({
         return { token };
       },
     });
- 
 
+    server.applyMiddleware({
+      app,
+      path: '/graphql'
+    });
+
+    app.listen({ port }, () => {
+      console.log('Gateway on http://localhost:4000/graphql');
+    });
+ 
+/*
   server.listen({port: 4000}).then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`);
-  });
+    
+  });*/
+
 })();
