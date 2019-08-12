@@ -39,6 +39,8 @@ const gateway = new ApolloGateway({
   const { schema, executor } = await gateway.load();
 
   const server = new ApolloServer({ schema, executor, 
+    introspection: true, // enables introspection of the schema
+    playground: true, // enables the actual playground
     context: ({ req }) => {
         // get the user token from the headers
         const token = req.headers['x-token'];
