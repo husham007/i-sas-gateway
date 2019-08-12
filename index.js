@@ -3,9 +3,15 @@ const { ApolloGateway, RemoteGraphQLDataSource } = require("@apollo/gateway");
 
 const gateway = new ApolloGateway({
   serviceList: [
+    /*
     { name: "user", url: "http://localhost:5000/graphql" },
     { name: "questionBank", url: "http://localhost:7000/graphql" },
     { name: "exam", url: "http://localhost:7009/graphql" },
+    */
+
+   { name: "user", url: "https://isas-user-microservice.herokuapp.com/graphql" },
+   { name: "questionBank", url: "https://qb-microservice.herokuapp.com/graphql" },
+   { name: "exam", url: "https://exam-microservice.herokuapp.com/graphql" },
     
   ],
 
