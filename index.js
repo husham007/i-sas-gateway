@@ -19,7 +19,7 @@ const gateway = new ApolloGateway({
 
    { name: "user", url: "https://isas-user-microservice.herokuapp.com/graphql" },
    { name: "questionBank", url: "https://qb-microservice.herokuapp.com/graphql" },
-   { name: "exam", url: "https://exam-microservice.herokuapp.com/graphql" },
+   { name: "exam", url: "https://exam-microservice.herokuapp.com/graphql" },   
     
   ],
 
