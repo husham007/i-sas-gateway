@@ -21,7 +21,7 @@ const gateway = new ApolloGateway({
    { name: "questionBank", url: "https://qb-microservice.herokuapp.com/graphql" },
    { name: "exam", url: "https://exam-microservice.herokuapp.com/graphql" },   
     
-  ],
+  ],  
 
   buildService({ name, url }) {
     return new RemoteGraphQLDataSource({
