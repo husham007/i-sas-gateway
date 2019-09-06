@@ -23,7 +23,7 @@ const gateway = new ApolloGateway({
     
   ], 
 
-  buildService({ name, url }) {
+  buildService({ name, url }) {  
     return new RemoteGraphQLDataSource({
       url,
       willSendRequest({ request, context }) {
